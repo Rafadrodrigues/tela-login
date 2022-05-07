@@ -11,14 +11,47 @@ body{
     justify-content:center;
     align-items: center;
 }
-.card-direita{
-    background-color: #a9b3b8;
+.card-esquerda{
     display: flex;
     justify-content:center;
     align-items: center;
     flex-direction: column;
-    width: 30vw;
-    height: 0;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+}
+.card-primario{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    width: 60vw;
+    height: 100vh;
+}
+#imagem{
+    width: 40%;
+    height: 40%;
+}
+.card-secundario{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 40vw;
+    height: 100vh;
+
+}
+.card-direita{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+header
+{
+    color:rgb(78, 119, 153);
+    font-weight: 600;
+    font-size:30px;
+    margin-bottom: 20px;
 }
 .cadastro{
     display: flex;
@@ -31,7 +64,7 @@ body{
     border-radius: 8px;
     padding: 10px;
 }
-.cadastro1{
+.enviar{
     background: rgb(78, 119, 153);
     margin-bottom:20px;
     border-radius: 8px;
@@ -39,7 +72,7 @@ body{
     width: 100px;
     font-weight: 700;
 }
-.cadastro1:hover{
+.enviar:hover{
     background-color: #d4e3e9;
     color: black;
 }
@@ -49,7 +82,9 @@ body{
 label{
     color:rgb(78, 119, 153);
     font-weight: 600;
+    font-size:20px;
 }
+
 input::placeholder{
     font-weight: 700;
 }
@@ -59,128 +94,30 @@ input::placeholder{
     margin-bottom: 10px;
     font-weight: 600;
 }
-#card-secundario{
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    flex-direction: column;
-    background-color: white;
+
+@media (max-width:1000px){
+
+            .card-esquerda{
+                display: none;
+            }
+            .card-primario{
+                display: none;
+            }
+    
+        .card-secundario{
+                display: flex;
+                justify-content:center;
+                align-items: center;
+                width: 100vw;
+                height: 100vh;
+            }
+            .card-direita{
+                display: flex;
+                justify-content:center;
+                align-items: center;
+                flex-direction: column;
+                background-color: #a9b3b8;
+                width: 30vw;
+                height: 0;
+            }
 }
-#imagem{
-    width: 50%;
-    height: 50%;
-}
-
-/*Aqui estarão as principais TAGS que vou usar em CSS
-
-Posicionamento.
-
-Display.
-
-Display:Block; Ocupa toda a linha,então, no documento
-eles ficam um em baixo do outro. Dá para mexer em altura
-e largura.Não da para colocar nenhum elemento na frente.
-Display:inline;  Dá para formar retangulos, porém não
-dá para controlar a altura. Da para colocar outro elemento
-na frente.
-Display:inline-block; Podemos colocar elementos na frente
-alterar altura e largura.
-
-Overflow.
-
-Overflow:auto; Podemos colocar rolagens, caso algum elemento 
-ultrapasse a área delimitada, tanto a vertical quanto na 
-horizontal.
-Hidden=Invisivel. Não aparece nada de rolagem.
-Scroll=Independente se esta ultrapassando ou não, ele vai 
-criar uma barra de rolagem
-
-Alinhamento Horizontal e vertical.
-
-Colocamos o lado que queremos mexer Ex.Left e top, em porcentagem
-utilizamos a tag transform:translate(-50%,-50%); o primeiro numero
-é o do X segundo y. Alterando eu noto a diferença.
-
-Position.
-
-Sempre antes de fazer algo é importante tirar a configurações padrão
-que vem no html.
-margin:0;
-padding:0;
-box-sizing:border-box;
-
-position:Static;= Padrão,nem precisa declarar.
-position:Fixed;=Elemento fica fixo na pagina independente do scroll.
-position:sticky;=Mesma coisa do fixed,so que o elemento não some 
-da tela.Ex.youtube logo.
-position:relative;=Ele desloca de acordo a sua posição normal. Podemos utilizar 
-caso seja adiv principal.
-position:absolute;=Não funciona caso o elemento seja static,nesse caso,devemos 
-colocar o elemento pai em relative para dar certo.
-
-Float. 
-
-Com o float temos os elementos flutuando, devemos apenas escolher onde vamos
-querer que eles fiquem.
-Ex.float:left;
-Podemos utilizar para imagens e textos.
-
-Responsividade é muito importante mas é algo que exigi mais atenção de mim.
-Porque devo criar uma página para que funcione em celulares também
-por isso devo ficar atento quanto as dimensões.
-
-Media queries.
-
-Acho que vou utilizar isso pouco, entretanto entra no assunto de responsividade.
-@media screen and(max ou min-width:400px){}.Dentro das chaves vamos utilizar os 
-comandos que queremos alterar quando a tela ficar menor que a largura determinada
-poodemos utilizar vários,mas o conteudo tem que ficar em ordem par seguir corretamente
-
-MODULO PASSADO
-list-style:none; Tiras os pontos do lado dos <li>
-margin:auto; centraliza o elemento
-text-decoration:none;Para tirar o sublinhado do link.
-font-variant:;Vamos verificar as diferenças e ver qual 
-se adequa mais ao nosso estilo.
-
-nome da class ou id:visited .Quando colocarmos as cores que quisermos,
-quando visitar a página, vai ficar dessa cor.
-nome da class ou id:hover. Quando o curso do mouse passar em cima
-do link ele vai mudar para a cor que a gente selecionar.
-nome da class ou id:active. Quando clicar no link ele vai assumir 
-outra cor que a gente colocar.
-
-@font-face{
-    font-family:Nome que vamos da a fonte;
-    srcurl(url da fonte)
-}
-Isso acima é caso a gente baixe uma fonte da internet e queira utilizar.
-
-    APRENDENDO COISAS FORA DO PROGRAMADOR BR.
-
-Unidade de media importantes para responsividade.
-
-Vw e Vh.
-
-Vw. Corresponde a parte de largura(widht) em porcentagem. Ex.100vw corresponde
-a 1000px,então podemos dizer que 1vw corresponde a 10px.
-
-Vh.Corresponde a parte de Altura(Height) em porcentagem. Ex.100vh corresponde
-a 1000px,então podemos dizer que 1vh corresponde a 10px.
-
-
-justify-content. Centraliza as coisas no eixo x.
-align-items. Centraliza as coisas no eixo y.
-
-Flex-start para centralizar a esquerda. flex-end a direita, center centro
-space-bewteen espaço entre elementos space-around espaço igual só que menor
-do que o bewteen.
-
-Para que alguns elementos fiquem em baixo um do outro, vamos utilizar 
-o flex-direction:column;
-
-Para dar um desing diferente, temos o box-shadow. Eu vou estudar ele melhor 
-na internet
-
-font-weight é bem interesante. Ela faz com que eu escolha a expessura da minha
-fonte*/
